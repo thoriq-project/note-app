@@ -23,7 +23,6 @@ export default {
 .burger-toggle {
   width: 25px;
   height: 21px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -35,7 +34,7 @@ export default {
   display: block;
   height: 3px;
   border-radius: 1px;
-  background-color: red;
+  background-color: #333333;
   transition: 0.5s;
 }
 

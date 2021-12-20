@@ -1,9 +1,11 @@
 <template>
-  <div class="navigation">
-    <div class="nav-bar">
+  <div class="navbar fixed-top">
+    <div class="container">
       <BurgerToggle v-b-toggle.sidebar></BurgerToggle>
-      <Sidebar />
-      <div class="brand"><a href="#">notte.</a></div>
+      <Sidebar></Sidebar>
+      <div class="navbar-brand">
+        <router-link to="/">notte.</router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -20,33 +22,21 @@ export default {
 </script>
 
 <style scoped>
-.navigation {
+.navbar {
   background-color: white;
   padding: 0px 10px;
-  height: 50px;
-  width: 100%;
-  position: fixed;
 }
 
-.nav-bar {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.container {
+  max-width: 500px;
+  padding: 0px;
 }
 
-.brand a {
-  font-family: "Montserrat Alternates", sans-serif;
-  font-size: 1.8rem;
-  font-weight: bold;
+a {
   text-decoration: none;
+  font-size: 1.5rem;
   color: var(--font-color);
-}
-
-.button-burger {
-  height: 80%;
-  width: 100px;
-  background-color: yellow;
+  font-weight: bold;
+  font-family: "Montserrat Alternates", sans-serif;
 }
 </style>
