@@ -1,26 +1,47 @@
 <template>
   <div class="note-card">
     <div class="header-card">
-      <p class="title-card">Title of the note yesh</p>
-      <p class="date-card">20/12/2021</p>
+      <p class="title-card">{{ title }}</p>
+      <div class="header-right">
+        <b-icon icon="chevron-down" class="header-icon"></b-icon>
+      </div>
     </div>
+
+    <!-- Main Card -->
     <div class="main-card">
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque nihil laboriosam unde porro eos voluptatum, odit suscipit dolore ipsam libero? Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, doloribus?</p>
+      <p>{{ content }}</p>
     </div>
+
+    <!-- Footer Card -->
     <div class="footer-card">
       <div class="footer-left">
-        <img src="../assets/pin-angle-fill.svg" alt="Pinned Note" />
+        <div>
+          <div class="pinned me-2" v-if="pin">
+            <img src="../assets/pin-angle-fill.svg" alt="Pinned Note" />
+          </div>
+          <div class="unpinned" v-else>
+            <p></p>
+          </div>
+        </div>
+        <div class="note-date">
+          <p>{{ date }}</p>
+        </div>
       </div>
       <div class="footer-right">
-        <p class="footer-type">note</p>
-        <p><b-icon class="footer-icon" icon="card-text"></b-icon></p>
+        <p class="footer-type">{{ type }}</p>
+        <p>
+          <b-icon class="footer-icon" icon="card-text" v-if="type == 'note'"></b-icon>
+          <b-icon class="footer-icon" icon="card-list" v-else> </b-icon>
+        </p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["title", "date", "content", "type", "pin"],
+};
 </script>
 
 <style>
@@ -37,34 +58,38 @@ export default {};
   width: 100%;
   height: 23%;
   display: grid;
-  grid-template-columns: 6fr 4fr;
+  grid-template-columns: 7fr 3fr;
   align-items: top;
   /* background-color: pink; */
+}
+
+.header-right {
+  width: 100%;
+  height: 100%;
+  /* background-color: powderblue; */
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+  padding-top: 5px;
+}
+
+.header-icon {
+  text-align: center;
+  margin: 0px 5px;
+  cursor: pointer;
 }
 
 .title-card {
   display: inline-block;
   width: 100%;
-  text-align: start;
+  height: 100%;
+  text-align: initial;
   color: var(--font-color);
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-}
-
-.date-card {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: center;
-  justify-content: flex-end;
-  text-align: end;
-
-  font-weight: 500;
-  color: #858484;
-  font-size: 0.9rem;
 }
 
 .main-card {
@@ -85,6 +110,8 @@ export default {};
   -webkit-box-orient: vertical;
 }
 
+/* Footer Card Css */
+
 .footer-card {
   width: 100%;
   height: 17%;
@@ -92,19 +119,42 @@ export default {};
   display: flex;
   justify-content: space-between;
   padding-right: 10px;
-  color: #858484;
+  color: var(--font-color);
 }
 
 .footer-right {
   display: flex;
+  padding-top: 2px;
+}
+
+.footer-icon {
+  font-weight: bold;
 }
 
 .footer-type {
   font-weight: bold;
   padding-right: 3px;
 }
-
+/* ----------------- */
 .footer-left {
+  height: 100%;
+  width: 100%;
   padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-left .note-date {
+  width: max-content;
+  height: 100%;
+  /* background-color: pink; */
+
+  padding-top: 4px;
+}
+
+.footer-left .note-date p {
+  font-size: 0.8rem;
+  font-weight: bolder;
+  color: #696969;
 }
 </style>
