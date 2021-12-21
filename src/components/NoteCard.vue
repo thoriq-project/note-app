@@ -3,7 +3,8 @@
     <div class="header-card">
       <p class="title-card">{{ title }}</p>
       <div class="header-right">
-        <b-icon icon="chevron-down" class="header-icon"></b-icon>
+        <!-- <b-icon icon="chevron-down" class="header-icon"></b-icon> -->
+        <DropdownButton />
       </div>
     </div>
 
@@ -39,7 +40,11 @@
 </template>
 
 <script>
+import DropdownButton from "./DropdownButton.vue";
 export default {
+  components: {
+    DropdownButton,
+  },
   props: ["title", "date", "content", "type", "pin"],
 };
 </script>
@@ -69,8 +74,7 @@ export default {
   /* background-color: powderblue; */
   display: flex;
   justify-content: flex-end;
-  padding-right: 5px;
-  padding-top: 5px;
+  align-items: flex-start;
 }
 
 .header-icon {
@@ -125,10 +129,6 @@ export default {
 .footer-right {
   display: flex;
   padding-top: 2px;
-}
-
-.footer-icon {
-  font-weight: bold;
 }
 
 .footer-type {
