@@ -1,5 +1,23 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <Navbar />
+    <div class="about-body">
+      <button><router-link to="/">Back to Home</router-link></button>
+    </div>
   </div>
 </template>
+
+<script>
+import Navbar from "@/components/Navbar.vue";
+export default {
+  components: {
+    Navbar,
+  },
+};
+</script>
+
+<style scoped>
+.about-body {
+  padding-top: 50px;
+}
+</style>

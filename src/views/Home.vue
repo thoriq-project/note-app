@@ -3,7 +3,7 @@
     <Navbar />
     <div class="home-body px-2 pb-2">
       <SearchField />
-      <div class="note-card mt-2"></div>
+      <NoteCard />
     </div>
   </div>
 </template>
@@ -11,9 +11,10 @@
 <script>
 import Navbar from "@/components/Navbar.vue";
 import SearchField from "@/components/SearchField.vue";
+import NoteCard from "@/components/NoteCard.vue";
 export default {
   name: "Home",
-  components: { Navbar, SearchField },
+  components: { Navbar, SearchField, NoteCard },
 };
 </script>
 
@@ -21,11 +22,5 @@ export default {
 .home-body {
   padding-top: 50px;
   background-color: var(--main-color);
-}
-
-.note-card {
-  width: 100%;
-  height: 150px;
-  background-color: white;
 }
 </style>

@@ -1,16 +1,10 @@
 <template>
-  <div class="search-field mt-2">
-    <!-- <div class="form-wrapper container-fluid h100 d-flex align-items-center">
-      <b-form inline>
-        <b-button type="submit">Search</b-button>
-        <b-form-input id="search-input" placeholder="e.g How to make omlette"></b-form-input>
-      </b-form>
-    </div> -->
+  <div class="search-field">
     <b-form class="d-flex align-items-center">
       <div class="button-wrapper">
-        <b-button type="submit" @submit.prevent>
-          <b-icon icon="search" scale="1"></b-icon>
-        </b-button>
+        <button class="btn btn-submit" type="submit">
+          <b-icon class="btn-icon" icon="search" scale="1"></b-icon>
+        </button>
       </div>
       <div class="input-wrapper">
         <b-form-input id="search-input" placeholder="e.g How to make omlette"></b-form-input>
@@ -27,9 +21,9 @@ export default {};
 .search-field {
   width: 100%;
   height: 40px;
-  background-color: pink;
   display: flex;
   justify-content: space-between;
+  margin-top: 5px;
 }
 
 form {
@@ -41,16 +35,25 @@ form {
   height: 100%;
 }
 
-.button-wrapper button {
+.button-wrapper .btn {
   width: 100%;
   height: 100%;
   border-radius: 0px;
+  background-color: #333333;
 }
 
-button:active {
-  border: none;
+button:focus {
   box-shadow: none;
+  border: none;
   outline: none;
+}
+
+.btn:active {
+  border: 2px solid white;
+}
+
+.btn-icon {
+  color: white;
 }
 
 .input-wrapper {

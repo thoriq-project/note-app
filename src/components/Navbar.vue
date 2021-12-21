@@ -39,4 +39,8 @@ a {
   font-weight: bold;
   font-family: "Montserrat Alternates", sans-serif;
 }
+
+a:hover {
+  color: #838383;
+}
 </style>
