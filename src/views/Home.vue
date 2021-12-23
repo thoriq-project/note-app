@@ -5,11 +5,9 @@
       <SearchField />
       <NoteCard v-for="data in notes" :title="data.title" :date="data.date" :content="data.content" :type="data.type" :pin="data.pinned" :key="data.id"></NoteCard>
     </div>
-
-    <!-- Lanjutkan nanti -->
-    <FloatingButton @on-click="openModal()"></FloatingButton>
+    <FloatingButton @on-click="openModal()" icon="journal-plus" />
     <Modal :mwidth="modalsize.mwidth" :mheight="modalsize.mheight">
-      <AddNoteModal></AddNoteModal>
+      <AddNoteModal />
     </Modal>
   </div>
 </template>

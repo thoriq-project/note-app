@@ -1,13 +1,15 @@
 <template>
   <div>
     <div @click="$emit('on-click')" class="floating-button">
-      <b-icon icon="journal-plus" scale="1.4" class="add-icon"> </b-icon>
+      <b-icon :icon="icon" scale="1.4" class="add-icon"> </b-icon>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["icon"],
+};
 </script>
 
 <style scoped>
