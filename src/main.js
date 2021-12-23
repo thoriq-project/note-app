@@ -10,10 +10,14 @@ Vue.config.productionTip = false;
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 
+import VModal from "vue-js-modal";
+
 Vue.use(VueAxios, axios);
 Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin);
+
+Vue.use(VModal);
 
 new Vue({
   router,

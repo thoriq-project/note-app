@@ -1,6 +1,8 @@
 <template>
-  <div class="floating-button">
-    <b-icon icon="journal-plus" scale="1.4" class="add-icon"></b-icon>
+  <div>
+    <div @click="$emit('on-click')" class="floating-button">
+      <b-icon icon="journal-plus" scale="1.4" class="add-icon"> </b-icon>
+    </div>
   </div>
 </template>
 
@@ -8,7 +10,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 .floating-button {
   width: 55px;
   height: 55px;

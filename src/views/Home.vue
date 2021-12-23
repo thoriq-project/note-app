@@ -5,7 +5,12 @@
       <SearchField />
       <NoteCard v-for="data in notes" :title="data.title" :date="data.date" :content="data.content" :type="data.type" :pin="data.pinned" :key="data.id"></NoteCard>
     </div>
-    <floating-button></floating-button>
+
+    <!-- Lanjutkan nanti -->
+    <FloatingButton @on-click="openModal()"></FloatingButton>
+    <Modal :mwidth="modalsize.mwidth" :mheight="modalsize.mheight">
+      <AddNoteModal></AddNoteModal>
+    </Modal>
   </div>
 </template>
 
@@ -15,16 +20,26 @@ import SearchField from "@/components/SearchField.vue";
 import NoteCard from "@/components/NoteCard.vue";
 import axios from "axios";
 import FloatingButton from "@/components/FloatingButton.vue";
+import Modal from "@/components/Modal.vue";
+import AddNoteModal from "@/components/AddNoteModal.vue";
 
 export default {
   name: "Home",
-  components: { Navbar, SearchField, NoteCard, FloatingButton },
+  components: { Navbar, SearchField, NoteCard, FloatingButton, Modal, AddNoteModal },
   data() {
     return {
       notes: "",
+      modalsize: {
+        mwidth: "80%",
+        mheight: "250px",
+      },
     };
   },
-  methods: {},
+  methods: {
+    openModal() {
+      this.$modal.show("modal-component");
+    },
+  },
   mounted() {
     axios
       .get("http://localhost:3000/data")
