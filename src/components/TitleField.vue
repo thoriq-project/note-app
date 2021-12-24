@@ -1,15 +1,13 @@
 <template>
   <div class="title-field">
-    <b-form-input placeholder="Add title .." required></b-form-input>
+    <b-form-input :value="value" @input="$emit('input', $event)" placeholder="Add title .." required></b-form-input>
   </div>
 </template>
 
 <script>
 export default {
-  props: [],
-  data() {
-    return {};
-  },
+  props: ["value"],
+  methods: {},
 };
 </script>
 

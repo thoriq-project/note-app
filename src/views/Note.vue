@@ -11,14 +11,14 @@
     </div>
     <main>
       <b-form id="input-1" @submit.prevent>
-        <TitleField></TitleField>
+        <TitleField v-model="noteData.title"></TitleField>
         <NoteField></NoteField>
+        <p>{{ noteData.title }}</p>
         <div class="main-field"></div>
       </b-form>
     </main>
     <FloatingButton v-if="buttonup" @on-click="scrollTop()" icon="caret-up-fill" />
     <Modal><h1>Tester</h1></Modal>
-    <p>{{ noteData.title }}</p>
   </div>
 </template>
 
