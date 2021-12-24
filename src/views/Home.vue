@@ -6,7 +6,7 @@
       <NoteCard v-for="data in notes" :title="data.title" :date="data.date" :content="data.content" :type="data.type" :pin="data.pinned" :key="data.id"></NoteCard>
     </div>
     <FloatingButton @on-click="openModal()" icon="journal-plus" />
-    <Modal :mwidth="modalsize.mwidth" :mheight="modalsize.mheight">
+    <Modal :width="modalsize.width" :height="modalsize.height">
       <AddNoteModal />
     </Modal>
   </div>
@@ -28,8 +28,8 @@ export default {
     return {
       notes: "",
       modalsize: {
-        mwidth: "80%",
-        mheight: "250px",
+        width: "80%",
+        height: "250px",
       },
     };
   },

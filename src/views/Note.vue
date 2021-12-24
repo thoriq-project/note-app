@@ -12,13 +12,15 @@
     <main>
       <b-form id="input-1" @submit.prevent>
         <TitleField v-model="noteData.title"></TitleField>
-        <NoteField></NoteField>
-        <p>{{ noteData.title }}</p>
+        <NoteField v-model="noteData.content"></NoteField>
+
         <div class="main-field"></div>
       </b-form>
     </main>
     <FloatingButton v-if="buttonup" @on-click="scrollTop()" icon="caret-up-fill" />
-    <Modal><h1>Tester</h1></Modal>
+    <Modal :width="modalsize.width" :height="modalsize.height">
+      <CancelModal @clickyes="backToHome" @clickno="closeModal()"></CancelModal>
+    </Modal>
   </div>
 </template>
 
@@ -28,14 +30,20 @@ import NoteField from "@/components/NoteField.vue";
 import FloatingButton from "@/components/FloatingButton.vue";
 import Button from "@/components/Button.vue";
 import Modal from "@/components/Modal.vue";
+import CancelModal from "@/components/CancelModal.vue";
 export default {
   name: "Note",
   data() {
     return {
       buttonup: false,
+      modalsize: {
+        width: "80%",
+        height: "auto",
+      },
       noteData: {
         title: "",
         content: "",
+        date: "",
       },
     };
   },
@@ -45,6 +53,7 @@ export default {
     FloatingButton,
     Button,
     Modal,
+    CancelModal,
   },
   mounted() {
     window.addEventListener("scroll", this.getScrollY);
@@ -62,11 +71,17 @@ export default {
       document.documentElement.scrollTop = 0;
     },
     cancelValidation() {
-      if (this.noteData.title !== "") {
+      if (this.noteData.title !== "" || this.noteData.content !== "") {
         this.$modal.show("modal-component");
       } else {
         this.$router.push({ name: "Home" });
       }
+    },
+    closeModal() {
+      this.$modal.hide("modal-component");
+    },
+    backToHome() {
+      this.$router.push({ name: "Home" });
     },
   },
 };

@@ -1,11 +1,13 @@
 <template>
   <div class="note-field">
-    <b-form-textarea rows="15" max-rows="100" placeholder="Type something .."></b-form-textarea>
+    <b-form-textarea :value="value" @input="$emit('input', $event)" rows="15" max-rows="100" placeholder="Type something .."></b-form-textarea>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["value"],
+};
 </script>
 
 <style scoped>
