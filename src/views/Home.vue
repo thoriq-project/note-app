@@ -3,7 +3,18 @@
     <Navbar />
     <div class="home-body px-2 pb-2">
       <SearchField />
-      <NoteCard v-for="data in notes" :title="data.title" :date="data.date" :content="data.content" :type="data.type" :pin="data.pinned" :key="data.id"></NoteCard>
+      <NoteCard
+        v-for="data in notes"
+        :title="data.title"
+        :date="data.date"
+        :content="data.content"
+        :type="data.type"
+        :pin="data.pinned"
+        :key="data.id"
+        @ondelete="deleteNote(data.id)"
+        @onpin="pinNote()"
+        @noteclick="openNote(data.id)"
+      ></NoteCard>
     </div>
     <FloatingButton @on-click="openModal()" icon="journal-plus" />
     <Modal :width="modalsize.width" :height="modalsize.height">
@@ -37,16 +48,27 @@ export default {
     openModal() {
       this.$modal.show("modal-component");
     },
+    deleteNote(id) {
+      axios
+        .delete("http://localhost:3000/data/" + id)
+        .then(this.loadData())
+        .catch((e) => console.log(e));
+    },
+    pinNote() {
+      console.log("pinned");
+    },
+    loadData() {
+      axios
+        .get("http://localhost:3000/data")
+        .then((response) => (this.notes = response.data))
+        .catch((error) => console.log(error));
+    },
+    openNote(id) {
+      this.$router.push({ path: "/noteedit/" + id });
+    },
   },
   mounted() {
-    axios
-      .get("http://localhost:3000/data")
-      .then((response) => {
-        this.notes = response.data;
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    this.loadData();
   },
 };
 </script>

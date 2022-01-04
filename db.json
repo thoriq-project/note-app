@@ -18,54 +18,6 @@
   },
   "data": [
     {
-      "id": 1,
-      "date": "21-12-2021",
-      "title": "Lorem ipsum bla bla bla",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "type": "note",
-      "pinned": true
-    },
-    {
-      "id": 2,
-      "date": "20-12-2021",
-      "title": " 2 Lorem ipsum bla bla bla",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
-      "type": "list",
-      "pinned": false
-    },
-    {
-      "id": 3,
-      "date": "19-12-2021",
-      "title": "3 Lorem ipsum bla bla bla",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "type": "note",
-      "pinned": false
-    },
-    {
-      "id": 4,
-      "date": "18-12-2021",
-      "title": "4 Lorem ipsum bla bla bla",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "type": "note",
-      "pinned": false
-    },
-    {
-      "id": 5,
-      "date": "17-12-2021",
-      "title": "5 Lorem ipsum bla bla bla",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "type": "note",
-      "pinned": false
-    },
-    {
-      "id": 6,
-      "date": "16-12-2021",
-      "title": "6 Lorem ipsum bla bla bla",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "type": "note",
-      "pinned": false
-    },
-    {
       "id": 7,
       "date": "15-12-2021",
       "title": "7 Lorem ipsum bla bla bla",
@@ -74,12 +26,16 @@
       "pinned": false
     },
     {
-      "id": 8,
-      "date": "14-12-2021",
-      "title": "8 Lorem ipsum bla bla bla",
+      "date": "Tue, 4-1-2022",
+      "title": "Wadidaw",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      "type": "note",
-      "pinned": false
+      "id": 8
+    },
+    {
+      "date": "Tue, 4-1-2022",
+      "title": "Aslaksc ajdbc hdchsd vvdhvcakjsbckja",
+      "content": "kocak",
+      "id": 9
     }
   ]
 }

@@ -19,6 +19,5 @@ export default {
 }
 .title-field input {
   height: 100%;
-  text-transform: capitalize;
 }
 </style>

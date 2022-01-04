@@ -2,24 +2,26 @@
   <div class="note">
     <div class="header">
       <div class="btn-wrapper">
-        <Button class="btn-cancel" @on-click="cancelValidation()">cancel</Button>
+        <Button class="btn-cancel" @onclick="cancelValidation()">cancel</Button>
       </div>
-      <div class="date-wrapper">Thu, 23-12-2021</div>
+      <div class="date-wrapper">{{ currentDate }}</div>
       <div class="btn-wrapper">
-        <Button class="btn-save" type="submit" form="input-1">save</Button>
+        <Button class="btn-save" @onclick="saveValidation()" type="submit" form="input-1">save</Button>
       </div>
     </div>
     <main>
       <b-form id="input-1" @submit.prevent>
         <TitleField v-model="noteData.title"></TitleField>
         <NoteField v-model="noteData.content"></NoteField>
-
+        {{ $route.params.id }}
         <div class="main-field"></div>
       </b-form>
     </main>
     <FloatingButton v-if="buttonup" @on-click="scrollTop()" icon="caret-up-fill" />
     <Modal :width="modalsize.width" :height="modalsize.height">
-      <CancelModal @clickyes="backToHome" @clickno="closeModal()"></CancelModal>
+      <CancelModal @clickyes="backToHome" @clickno="closeModal()">
+        <p>you will leave without save the note</p>
+      </CancelModal>
     </Modal>
   </div>
 </template>
@@ -31,6 +33,7 @@ import FloatingButton from "@/components/FloatingButton.vue";
 import Button from "@/components/Button.vue";
 import Modal from "@/components/Modal.vue";
 import CancelModal from "@/components/CancelModal.vue";
+import axios from "axios";
 export default {
   name: "Note",
   data() {
@@ -46,6 +49,38 @@ export default {
         date: "",
       },
     };
+  },
+  computed: {
+    currentDate() {
+      let today = new Date();
+      let month = today.getMonth() + 1;
+      let day = today.getDay();
+      switch (day) {
+        case 0:
+          day = "Sun";
+          break;
+        case 1:
+          day = "Mon";
+          break;
+        case 2:
+          day = "Tue";
+          break;
+        case 3:
+          day = "Wed";
+          break;
+        case 4:
+          day = "Thu";
+          break;
+        case 5:
+          day = "Fri";
+          break;
+        case 6:
+          day = "Sat";
+          break;
+      }
+      let date = day + ", " + today.getDate() + "-" + month + "-" + today.getFullYear();
+      return date;
+    },
   },
   components: {
     TitleField,
@@ -75,6 +110,25 @@ export default {
         this.$modal.show("modal-component");
       } else {
         this.$router.push({ name: "Home" });
+      }
+    },
+    saveValidation() {
+      this.noteData.date = this.currentDate;
+      if (this.noteData.title != null) {
+        axios
+          .post("http://localhost:3000/data", {
+            date: this.noteData.date,
+            title: this.noteData.title,
+            content: this.noteData.content,
+            type: "note",
+            pinned: false,
+          })
+          .then(() => {
+            console.log("Data berhasil ditambahkan");
+          })
+          .catch((e) => {
+            console.log(e);
+          });
       }
     },
     closeModal() {

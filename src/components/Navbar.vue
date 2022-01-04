@@ -18,6 +18,12 @@ export default {
     BurgerToggle,
     Sidebar,
   },
+  data() {
+    return {
+      isvisible: false,
+    };
+  },
+  methods: {},
 };
 </script>
 

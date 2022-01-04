@@ -1,11 +1,11 @@
 <template>
   <div class="cancel-modal">
     <div class="header">
-      Cancel write note ?
-      <p>you will leave without save the note</p>
+      Discard note ?
+      <slot></slot>
     </div>
     <div class="main">
-      <div class="btn btn-yes" @click="$emit('clickyes')">Yes</div>
+      <div class="btn btn-yes" @click="$emit('clickyes')">Discard</div>
       <div class="btn btn-no" @click="$emit('clickno')">No</div>
     </div>
   </div>

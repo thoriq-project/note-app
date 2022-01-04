@@ -1,5 +1,5 @@
 <template>
-  <div class="burger-toggle" @click="test()">
+  <div class="burger-toggle" @click="toggle()">
     <span></span>
     <span></span>
     <span></span>
@@ -8,8 +8,11 @@
 
 <script>
 export default {
+  data() {
+    return {};
+  },
   methods: {
-    test() {
+    toggle() {
       let span = document.querySelectorAll("span");
       span.forEach((item) => {
         item.classList.toggle("active");
@@ -19,7 +22,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .burger-toggle {
   width: 25px;
   height: 21px;
@@ -38,27 +41,27 @@ export default {
   transition: 0.5s;
 }
 
-span:nth-child(1) {
+.burger-toggle span:nth-child(1) {
   width: 75%;
 }
-span:nth-child(2) {
+.burger-toggle span:nth-child(2) {
   width: 100%;
 }
-span:nth-child(3) {
+.burger-toggle span:nth-child(3) {
   width: 50%;
 }
 
-span:nth-child(1).active {
+.burger-toggle span:nth-child(1).active {
   transform-origin: left center;
   transform: rotate(45deg) translate(2.5px, -2.5px);
   width: 50%;
   transition: 0.5s;
 }
-span:nth-child(2).active {
+.burger-toggle span:nth-child(2).active {
   transform: rotate(-45deg);
   transition: 0.5s;
 }
-span:nth-child(3).active {
+.burger-toggle span:nth-child(3).active {
   transform-origin: right center;
   transform: rotate(45deg) translate(6px, -6.5px);
   transition: 0.5s;

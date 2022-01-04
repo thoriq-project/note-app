@@ -4,8 +4,8 @@
       <template #button-content>
         <b-icon icon="chevron-down" scale="0.8" class="dd-icon"></b-icon>
       </template>
-      <b-dropdown-item-button @click="test()"> <b-icon icon="trash" variant="danger"></b-icon> Delete</b-dropdown-item-button>
-      <b-dropdown-item-button @click="test()"><img src="../assets/pin-angle-fill-color.svg" alt="Pinned Note" /> Pin</b-dropdown-item-button>
+      <b-dropdown-item-button @click="$emit('ondelete')"> <b-icon icon="trash" variant="danger"></b-icon> Delete</b-dropdown-item-button>
+      <b-dropdown-item-button @click="$emit('onpin')"><img src="../assets/pin-angle-fill-color.svg" alt="Pinned Note" /> Pin</b-dropdown-item-button>
     </b-dropdown>
   </div>
 </template>

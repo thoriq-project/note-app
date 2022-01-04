@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Note from "../views/Note.vue";
 import List from "../views/List.vue";
+import NoteEdit from "../views/NoteEdit.vue";
 
 Vue.use(VueRouter);
 
@@ -16,6 +17,11 @@ const routes = [
     path: "/note",
     name: "Note",
     component: Note,
+  },
+  {
+    path: "/noteedit/:id",
+    name: "NoteEdit",
+    component: NoteEdit,
   },
   {
     path: "/list",

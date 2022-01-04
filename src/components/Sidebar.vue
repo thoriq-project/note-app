@@ -1,5 +1,5 @@
 <template>
-  <b-sidebar id="sidebar" width="250px" z-index="50" no-header-close shadow>
+  <b-sidebar id="sidebar" width="250px" z-index="50" lazy no-header-close aria-label="sidebarhead" shadow>
     <div class="content px-2">
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
@@ -8,7 +8,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: [],
+};
 </script>
 
 <style scoped>

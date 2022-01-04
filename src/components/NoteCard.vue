@@ -1,10 +1,10 @@
 <template>
-  <div class="note-card">
+  <div class="note-card" @click="$emit('noteclick')">
     <div class="header-card">
       <p class="title-card">{{ title }}</p>
       <div class="header-right">
         <!-- <b-icon icon="chevron-down" class="header-icon"></b-icon> -->
-        <DropdownButton />
+        <DropdownButton @ondelete="$emit('ondelete')" @onpin="$emit('onpin')" />
       </div>
     </div>
 
